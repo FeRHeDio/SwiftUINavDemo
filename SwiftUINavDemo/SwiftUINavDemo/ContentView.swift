@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-  let dogsVM = DogViewModel()
+  let dogVM = DogViewModel()
   
   var body: some View {
-    List(dogsVM.dogs) { dog in
+    List(dogVM.dogs) { dog in
       Text(dog.name)
     }
   }
