@@ -8,17 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+  let dogsVM = DogViewModel()
+  
+  var body: some View {
+    List(dogsVM.dogs) { dog in
+      Text(dog.name)
     }
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
