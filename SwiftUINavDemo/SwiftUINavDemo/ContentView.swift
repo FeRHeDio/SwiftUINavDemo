@@ -9,13 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
   let dogVM = DogViewModel()
-  
+
   var body: some View {
-    List(dogVM.dogs) { dog in
-      Text(dog.name)
+    NavigationView {
+      List(dogVM.dogs) { dog in
+        NavigationLink {
+          DogDetails(dog: dog)
+        } label: {
+          Label(dog.name, systemImage: "heart")
+        }
+      }
+      .navigationTitle("Dogs World")
     }
   }
 }
+
+struct DogDetails: View {
+  let dog: Dog
+  
+  var body: some View {
+    Text(dog.name)
+  }
+}
+
 
 #Preview {
   ContentView()

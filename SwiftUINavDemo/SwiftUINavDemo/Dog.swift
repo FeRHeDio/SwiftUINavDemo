@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Dog: Identifiable {
+struct Dog: Identifiable, Hashable {
   var id = UUID()
   var name: String
 }
