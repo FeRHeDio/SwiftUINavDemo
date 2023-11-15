@@ -11,15 +11,14 @@ struct ContentView: View {
   let dogVM = DogViewModel()
 
   var body: some View {
-    NavigationView {
+    NavigationStack {
       List(dogVM.dogs) { dog in
-        NavigationLink {
-          DogDetails(dog: dog)
-        } label: {
-          Label(dog.name, systemImage: "heart")
-        }
+        NavigationLink(dog.name, value: dog)
       }
       .navigationTitle("Dogs World")
+      .navigationDestination(for: Dog.self) { dog in
+        DogDetails(dog: dog)
+      }
     }
   }
 }
