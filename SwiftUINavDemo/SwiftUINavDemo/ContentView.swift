@@ -27,6 +27,11 @@ struct ContentView: View {
 struct DogDetails: View {
   let dog: Dog
   
+  init(dog: Dog) {
+    self.dog = dog
+    print("dog is: \(dog)")
+  }
+  
   var body: some View {
     Text(dog.name)
   }
