@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+  @State var presentedDogs: [Dog] = []
   let dogVM = DogViewModel()
 
   var body: some View {
-    NavigationStack {
+    NavigationStack(path: $presentedDogs) {
       List(dogVM.dogs) { dog in
         NavigationLink(dog.name, value: dog)
-      }
+       }
       .navigationTitle("Dogs World")
       .navigationDestination(for: Dog.self) { dog in
         DogDetails(dog: dog)
@@ -30,7 +31,6 @@ struct DogDetails: View {
     Text(dog.name)
   }
 }
-
 
 #Preview {
   ContentView()
