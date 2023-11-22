@@ -44,5 +44,5 @@ struct CatsViewModel {
     Cat(name: "Bella"),
     Cat(name: "Tiger"),
     Cat(name: "Misty")
-    ]
+  ]
 }

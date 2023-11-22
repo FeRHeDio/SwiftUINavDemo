@@ -10,6 +10,9 @@
 		76BE324C2B02F28600F79E25 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BE324B2B02F28600F79E25 /* Dog.swift */; };
 		76E5D9792B0E2D8C00FA3D09 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5D9782B0E2D8C00FA3D09 /* Cat.swift */; };
 		76E5D97B2B0E440800FA3D09 /* PetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5D97A2B0E440800FA3D09 /* PetsViewModel.swift */; };
+		76E5D97E2B0E482D00FA3D09 /* DogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5D97D2B0E482D00FA3D09 /* DogDetails.swift */; };
+		76E5D9802B0E487100FA3D09 /* CatDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5D97F2B0E487100FA3D09 /* CatDetails.swift */; };
+		76E5D9822B0E490E00FA3D09 /* PetsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5D9812B0E490E00FA3D09 /* PetsRootView.swift */; };
 		76FBA8112B02C85E002747C5 /* SwiftUINavDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FBA8102B02C85E002747C5 /* SwiftUINavDemoApp.swift */; };
 		76FBA8132B02C85E002747C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FBA8122B02C85E002747C5 /* ContentView.swift */; };
 		76FBA8152B02C85E002747C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FBA8142B02C85E002747C5 /* Assets.xcassets */; };
@@ -20,6 +23,9 @@
 		76BE324B2B02F28600F79E25 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		76E5D9782B0E2D8C00FA3D09 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		76E5D97A2B0E440800FA3D09 /* PetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewModel.swift; sourceTree = "<group>"; };
+		76E5D97D2B0E482D00FA3D09 /* DogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetails.swift; sourceTree = "<group>"; };
+		76E5D97F2B0E487100FA3D09 /* CatDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetails.swift; sourceTree = "<group>"; };
+		76E5D9812B0E490E00FA3D09 /* PetsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsRootView.swift; sourceTree = "<group>"; };
 		76FBA80D2B02C85E002747C5 /* SwiftUINavDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUINavDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FBA8102B02C85E002747C5 /* SwiftUINavDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUINavDemoApp.swift; sourceTree = "<group>"; };
 		76FBA8122B02C85E002747C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +44,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76E5D97C2B0E481B00FA3D09 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76FBA8122B02C85E002747C5 /* ContentView.swift */,
+				76E5D97D2B0E482D00FA3D09 /* DogDetails.swift */,
+				76E5D97F2B0E487100FA3D09 /* CatDetails.swift */,
+				76E5D9812B0E490E00FA3D09 /* PetsRootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		76E5D9832B0E495A00FA3D09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				76BE324B2B02F28600F79E25 /* Dog.swift */,
+				76E5D9782B0E2D8C00FA3D09 /* Cat.swift */,
+				76E5D97A2B0E440800FA3D09 /* PetsViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		76FBA8042B02C85E002747C5 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				76FBA8102B02C85E002747C5 /* SwiftUINavDemoApp.swift */,
-				76FBA8122B02C85E002747C5 /* ContentView.swift */,
-				76BE324B2B02F28600F79E25 /* Dog.swift */,
-				76E5D9782B0E2D8C00FA3D09 /* Cat.swift */,
-				76E5D97A2B0E440800FA3D09 /* PetsViewModel.swift */,
+				76E5D9832B0E495A00FA3D09 /* Models */,
+				76E5D97C2B0E481B00FA3D09 /* Views */,
 				76FBA8142B02C85E002747C5 /* Assets.xcassets */,
 				76FBA8162B02C85E002747C5 /* Preview Content */,
 			);
@@ -146,9 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E5D9822B0E490E00FA3D09 /* PetsRootView.swift in Sources */,
 				76E5D9792B0E2D8C00FA3D09 /* Cat.swift in Sources */,
 				76FBA8132B02C85E002747C5 /* ContentView.swift in Sources */,
 				76FBA8112B02C85E002747C5 /* SwiftUINavDemoApp.swift in Sources */,
+				76E5D97E2B0E482D00FA3D09 /* DogDetails.swift in Sources */,
+				76E5D9802B0E487100FA3D09 /* CatDetails.swift in Sources */,
 				76E5D97B2B0E440800FA3D09 /* PetsViewModel.swift in Sources */,
 				76BE324C2B02F28600F79E25 /* Dog.swift in Sources */,
 			);

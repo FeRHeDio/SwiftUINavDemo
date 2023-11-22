@@ -1,36 +1,11 @@
 //
-//  ContentView.swift
+//  PetsRootView.swift
 //  SwiftUINavDemo
 //
-//  Created by Fernando Putallaz on 13/11/2023.
+//  Created by Fernando Putallaz on 22/11/2023.
 //
 
 import SwiftUI
-
-enum Screen: Hashable {
-  case dog(Dog)
-  case cat(Cat)
-}
-
-struct ContentView: View {
-  @State var presentedScreens: [Screen] = []
-  var pets = PetsViewModel()
-  
-  var body: some View {
-    NavigationStack(path: $presentedScreens) {
-      PetsRootView(pets: pets)
-        .navigationTitle("Pets World")
-        .navigationDestination(for: Screen.self) { screen in
-          switch screen {
-          case .dog(let dog):
-            DogDetails(dog: dog)
-          case .cat(let cat):
-            CatDetails(cat: cat)
-          }
-        }
-    }
-  }
-}
 
 struct PetsRootView: View {
   let pets: PetsViewModel
@@ -75,34 +50,6 @@ struct PetsRootView: View {
         }
       }
     }
-  }
-}
-
-struct DogDetails: View {
-  let dog: Dog
-  
-  init(dog: Dog) {
-    self.dog = dog
-    print("dog is: \(dog)")
-  }
-  
-  var body: some View {
-    Text(dog.name)
-      .font(.title).fontWeight(.bold)
-  }
-}
-
-struct CatDetails: View {
-  let cat: Cat
-  
-  init(cat: Cat) {
-    self.cat = cat
-    print("Cat is: \(cat)")
-  }
-  
-  var body: some View {
-    Text(cat.name)
-      .font(.title).fontWeight(.bold)
   }
 }
 

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct PetsViewModel {
   var dogs = DogViewModel().dogs
   var cats = CatsViewModel().cats
