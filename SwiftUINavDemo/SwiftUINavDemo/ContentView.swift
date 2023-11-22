@@ -7,36 +7,59 @@
 
 import SwiftUI
 
-enum Screens: Hashable {
+enum Screen: Hashable {
   case dog(Dog)
   case cat(Cat)
 }
 
 struct ContentView: View {
-  @State var path: [Screens] = []
-  
+  @State var presentedScreens: [Screen] = []
   let dogVM = DogViewModel()
   let catsVM = CatsViewModel()
-
+  
   var body: some View {
-    NavigationStack(path: $path) {
-      List {
-        Section("Dogs") {
-          ForEach(dogVM.dogs.prefix(5)) { dog in
-            NavigationLink(dog.name, value: Screens.dog(dog))
-          }
-        }
-        
-        
-        Section("Cats") {
-          ForEach(catsVM.cats.prefix(5)) { cat in
-            NavigationLink(cat.name, value: Screens.cat(cat))
+    NavigationStack(path: $presentedScreens) {
+      ScrollView {
+        LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
+          Section {
+            ForEach(dogVM.dogs) { dog in
+              NavigationLink(dog.name, value: Screen.dog(dog))
+                .font(.title).fontWeight(.light)
+            }
+          } header: {
+            HStack {
+              Text("Dogs")
+                .font(.title2).fontWeight(.bold)
+              Spacer()
+            }
+            .padding(12)
+            .background(Color.primary
+              .colorInvert()
+              .opacity(0.75))
           }
           
+          Section {
+            ForEach(catsVM.cats) { cat in
+              NavigationLink(cat.name, value: Screen.cat(cat))
+                .font(.title).fontWeight(.light)
+            }
+          } header: {
+            HStack {
+              Text("Cats")
+                .font(.title2).fontWeight(.bold)
+              Spacer()
+              
+            }
+            .padding(12)
+            .background(Color.primary
+              .colorInvert()
+              .opacity(0.75)
+            )
+          }
         }
       }
-      .navigationTitle("World of pets")
-      .navigationDestination(for: Screens.self) { screen in
+      .navigationTitle("Pets World")
+      .navigationDestination(for: Screen.self) { screen in
         switch screen {
         case .dog(let dog):
           DogDetails(dog: dog)
@@ -47,7 +70,6 @@ struct ContentView: View {
     }
   }
 }
-
 struct DogDetails: View {
   let dog: Dog
   
@@ -58,14 +80,21 @@ struct DogDetails: View {
   
   var body: some View {
     Text(dog.name)
+      .font(.title).fontWeight(.bold)
   }
 }
 
 struct CatDetails: View {
   let cat: Cat
   
+  init(cat: Cat) {
+    self.cat = cat
+    print("Cat is: \(cat)")
+  }
+  
   var body: some View {
     Text(cat.name)
+      .font(.title).fontWeight(.bold)
   }
 }
 
