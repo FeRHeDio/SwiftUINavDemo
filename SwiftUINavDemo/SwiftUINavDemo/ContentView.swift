@@ -14,15 +14,14 @@ enum Screen: Hashable {
 
 struct ContentView: View {
   @State var presentedScreens: [Screen] = []
-  let dogVM = DogViewModel()
-  let catsVM = CatsViewModel()
+  var pets = PetsViewModel()
   
   var body: some View {
     NavigationStack(path: $presentedScreens) {
       ScrollView {
         LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
           Section {
-            ForEach(dogVM.dogs) { dog in
+            ForEach(pets.dogs) { dog in
               NavigationLink(dog.name, value: Screen.dog(dog))
                 .font(.title).fontWeight(.light)
             }
@@ -39,7 +38,7 @@ struct ContentView: View {
           }
           
           Section {
-            ForEach(catsVM.cats) { cat in
+            ForEach(pets.cats) { cat in
               NavigationLink(cat.name, value: Screen.cat(cat))
                 .font(.title).fontWeight(.light)
             }
