@@ -18,57 +18,66 @@ struct ContentView: View {
   
   var body: some View {
     NavigationStack(path: $presentedScreens) {
-      ScrollView {
-        LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
-          Section {
-            ForEach(pets.dogs) { dog in
-              NavigationLink(dog.name, value: Screen.dog(dog))
-                .font(.title).fontWeight(.light)
-            }
-          } header: {
-            HStack {
-              Text("Dogs")
-                .font(.title2).fontWeight(.bold)
-              Spacer()
-            }
-            .padding(12)
-            .background(Color.primary
-              .colorInvert()
-              .opacity(0.75))
-          }
-          
-          Section {
-            ForEach(pets.cats) { cat in
-              NavigationLink(cat.name, value: Screen.cat(cat))
-                .font(.title).fontWeight(.light)
-            }
-          } header: {
-            HStack {
-              Text("Cats")
-                .font(.title2).fontWeight(.bold)
-              Spacer()
-              
-            }
-            .padding(12)
-            .background(Color.primary
-              .colorInvert()
-              .opacity(0.75)
-            )
+      PetsRootView(pets: pets)
+        .navigationTitle("Pets World")
+        .navigationDestination(for: Screen.self) { screen in
+          switch screen {
+          case .dog(let dog):
+            DogDetails(dog: dog)
+          case .cat(let cat):
+            CatDetails(cat: cat)
           }
         }
-      }
-      .navigationTitle("Pets World")
-      .navigationDestination(for: Screen.self) { screen in
-        switch screen {
-        case .dog(let dog):
-          DogDetails(dog: dog)
-        case .cat(let cat):
-          CatDetails(cat: cat)
+    }
+  }
+}
+
+struct PetsRootView: View {
+  let pets: PetsViewModel
+  
+  var body: some View {
+    ScrollView {
+      LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
+        Section {
+          ForEach(pets.dogs) { dog in
+            NavigationLink(dog.name, value: Screen.dog(dog))
+              .font(.title).fontWeight(.light)
+          }
+        } header: {
+          HStack {
+            Text("Dogs")
+              .font(.title2).fontWeight(.bold)
+            Spacer()
+          }
+          .padding(12)
+          .background(Color.primary
+            .colorInvert()
+            .opacity(0.75))
+        }
+        
+        Section {
+          ForEach(pets.cats) { cat in
+            NavigationLink(cat.name, value: Screen.cat(cat))
+              .font(.title).fontWeight(.light)
+          }
+        } header: {
+          HStack {
+            Text("Cats")
+              .font(.title2).fontWeight(.bold)
+            Spacer()
+            
+          }
+          .padding(12)
+          .background(Color.primary
+            .colorInvert()
+            .opacity(0.75)
+          )
         }
       }
     }
   }
 }
+
 struct DogDetails: View {
   let dog: Dog
   
