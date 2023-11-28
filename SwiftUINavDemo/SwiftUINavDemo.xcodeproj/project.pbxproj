@@ -13,6 +13,7 @@
 		76E5D97E2B0E482D00FA3D09 /* DogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5D97D2B0E482D00FA3D09 /* DogDetails.swift */; };
 		76E5D9802B0E487100FA3D09 /* CatDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5D97F2B0E487100FA3D09 /* CatDetails.swift */; };
 		76E5D9822B0E490E00FA3D09 /* PetsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5D9812B0E490E00FA3D09 /* PetsRootView.swift */; };
+		76E5D9852B0E547900FA3D09 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5D9842B0E547900FA3D09 /* AppRouter.swift */; };
 		76FBA8112B02C85E002747C5 /* SwiftUINavDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FBA8102B02C85E002747C5 /* SwiftUINavDemoApp.swift */; };
 		76FBA8132B02C85E002747C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FBA8122B02C85E002747C5 /* ContentView.swift */; };
 		76FBA8152B02C85E002747C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76FBA8142B02C85E002747C5 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		76E5D97D2B0E482D00FA3D09 /* DogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetails.swift; sourceTree = "<group>"; };
 		76E5D97F2B0E487100FA3D09 /* CatDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetails.swift; sourceTree = "<group>"; };
 		76E5D9812B0E490E00FA3D09 /* PetsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsRootView.swift; sourceTree = "<group>"; };
+		76E5D9842B0E547900FA3D09 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		76FBA80D2B02C85E002747C5 /* SwiftUINavDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUINavDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FBA8102B02C85E002747C5 /* SwiftUINavDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUINavDemoApp.swift; sourceTree = "<group>"; };
 		76FBA8122B02C85E002747C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				76FBA8102B02C85E002747C5 /* SwiftUINavDemoApp.swift */,
+				76E5D9842B0E547900FA3D09 /* AppRouter.swift */,
 				76E5D9832B0E495A00FA3D09 /* Models */,
 				76E5D97C2B0E481B00FA3D09 /* Views */,
 				76FBA8142B02C85E002747C5 /* Assets.xcassets */,
@@ -173,6 +176,7 @@
 			files = (
 				76E5D9822B0E490E00FA3D09 /* PetsRootView.swift in Sources */,
 				76E5D9792B0E2D8C00FA3D09 /* Cat.swift in Sources */,
+				76E5D9852B0E547900FA3D09 /* AppRouter.swift in Sources */,
 				76FBA8132B02C85E002747C5 /* ContentView.swift in Sources */,
 				76FBA8112B02C85E002747C5 /* SwiftUINavDemoApp.swift in Sources */,
 				76E5D97E2B0E482D00FA3D09 /* DogDetails.swift in Sources */,

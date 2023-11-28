@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SwiftUINavDemoApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  @State private var router = AppRouter()
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
+        .environment(router)
     }
+  }
 }

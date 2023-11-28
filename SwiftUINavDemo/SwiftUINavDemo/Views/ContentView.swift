@@ -7,20 +7,18 @@
 
 import SwiftUI
 
-enum Screen: Hashable {
-  case dog(Dog)
-  case cat(Cat)
-}
-
 struct ContentView: View {
-  @State var presentedScreens: [Screen] = []
   var pets = PetsViewModel()
   
+  @Environment(AppRouter.self) private var router
+  
   var body: some View {
-    NavigationStack(path: $presentedScreens) {
+    @Bindable var router = router
+    
+    NavigationStack(path: $router.pets) {
       PetsRootView(pets: pets)
         .navigationTitle("Pets World")
-        .navigationDestination(for: Screen.self) { screen in
+        .navigationDestination(for: AppRouter.Route.self) { screen in
           switch screen {
           case .dog(let dog):
             DogDetails(dog: dog)

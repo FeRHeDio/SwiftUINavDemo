@@ -16,11 +16,14 @@ struct DogDetails: View {
   }
   
   var body: some View {
-    Text(dog.name)
-      .font(.title).fontWeight(.bold)
+    VStack {
+      Text(dog.name)
+        .font(.title).fontWeight(.bold)
+    }
   }
 }
 
 #Preview {
   DogDetails(dog: DogViewModel().dogs.randomElement()!)
 }
+ 

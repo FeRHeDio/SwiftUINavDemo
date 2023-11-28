@@ -15,7 +15,7 @@ struct PetsRootView: View {
       LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
         Section {
           ForEach(pets.dogs) { dog in
-            NavigationLink(dog.name, value: Screen.dog(dog))
+            NavigationLink(dog.name, value: AppRouter.Route.dog(dog))
               .font(.title).fontWeight(.light)
           }
         } header: {
@@ -32,7 +32,7 @@ struct PetsRootView: View {
         
         Section {
           ForEach(pets.cats) { cat in
-            NavigationLink(cat.name, value: Screen.cat(cat))
+            NavigationLink(cat.name, value: AppRouter.Route.cat(cat))
               .font(.title).fontWeight(.light)
           }
         } header: {
@@ -55,4 +55,5 @@ struct PetsRootView: View {
 
 #Preview {
   ContentView()
+    .environment(AppRouter())
 }
